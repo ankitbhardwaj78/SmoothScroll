@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<a href="#home">home</a>
+	<a href="#Aboutus">Aboutus</a>
+	<div id="home">
+		<h1>home</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+	</div>
+	<div id="Aboutus">
+		<h1>About US</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+		<h1>yo</h1>
+	</div>
+</body>
+</html>
+<style type="text/css">
+	#move{
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+	}
+</style>
+<script type="text/javascript">
+	
+
+	var smoothscrollLibrary=function(tagname, time, frequency){
+		var atag=document.getElementsByTagName(tagname);
+		var number
+
+		window.addEventListener('wheel', function(event){
+			if(number!=null && event.deltaY > 0){
+				clearInterval(number);
+			}
+		});
+
+
+		var smoothscroll=function(event){
+			if(number!=null)
+			{
+				clearInterval(number);
+			}
+			var id=this.href.split('#')[1];
+			var el=document.getElementById(id);
+			reactObject =el.getBoundingClientRect();
+			currenty=window.scrollY;
+			var deltay=(reactObject.top-currenty)/(time/frequency);
+			number=setInterval(function(){
+				currenty=currenty+deltay;
+				window.scrollTo(0,currenty);
+				if(currenty>=reactObject.top)
+				{
+					clearInterval(number);
+				}
+
+			},frequency);
+		};
+		for(var i=0;i<atag.length;i++)
+		{
+			atag[i].addEventListener('click',smoothscroll);
+		}
+	};
+
+	smoothscrollLibrary('a', 2000, 100);
+
+</script>
